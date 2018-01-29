@@ -6,7 +6,11 @@
 
 
 
-File encryptor with DES and AES at the same time. 
+> IMPORTANT: We are not resposible of the use you do with that program. Take into account that if you forget your password it's imposible to recover the files. 
+
+
+File encryptor with DES and AES at the same time. You can choose to encrypt a file or all the files in a directory with DES and SHA1 or with that plus AES. 
+First of all, it gets the binaries of the files and encrypted to DES with a password and the result encrypted with AES with another password. **It encrypts any kind of file, including videos, binaries, etc.**	
 
 
 
