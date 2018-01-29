@@ -29,7 +29,11 @@ sudo apt-get install libcrypto++-dev libcrypto++-doc libcrypto++-utilsgit add
 make
 sudo ./Daes
 ```
-
+### Encryption
+<br>
+<p align="center">
+  <img src="/test/test2.png"/>
+</p>
 
 
 <!-- Markdown link & img dfn's -->
