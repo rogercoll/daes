@@ -30,10 +30,14 @@ make
 sudo ./Daes
 ```
 ### Encryption
-<br>
 <p align="center">
   <img src="/test/test2.png"/>
 </p>
+
+### Notes
+If you want to encrypt/decrypt a directory finish the path with a slash("/"). 
+
+
 
 
 <!-- Markdown link & img dfn's -->
