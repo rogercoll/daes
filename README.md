@@ -13,6 +13,22 @@ File encryptor with DES and AES at the same time. You can choose to encrypt a fi
 First of all, it gets the binaries of the files and encrypted to DES with a password and the result encrypted with AES with another password. **It encrypts any kind of file, including videos, binaries, etc.**	
 
 
+### Requirements
+
+- UNIX system
+- G++ compiler
+- Crypto++ libraries
+
+### Installation
+
+UNIX commands:
+```
+git clone https://github.com/rogercoll/daes.git
+cd daes
+sudo apt-get install libcrypto++-dev libcrypto++-doc libcrypto++-utilsgit add
+make
+sudo ./Daes
+```
 
 
 
