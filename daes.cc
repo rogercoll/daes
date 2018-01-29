@@ -24,7 +24,7 @@ void Daes::WriteIntoFile(){ //read and des
   //STORE File
   const char *aux= path.c_str();
       if(doaes)      CryptoPP::StringSource ss(aes_cipher, true,new CryptoPP::FileSink(aux)); // StringSource
-      else       CryptoPP::StringSource ss(m_cipher, true,new CryptoPP::FileSink("./aesencript.jpg")); // StringSource
+      else       CryptoPP::StringSource ss(m_cipher, true,new CryptoPP::FileSink(aux)); // StringSource
 
 }
 
@@ -121,13 +121,26 @@ void Daes::dec(){ //read and des
   const char *aux= path.c_str();
   string plain;
   CryptoPP::FileSource file( aux, true, new CryptoPP::StringSink( plain ) );
-  string aux_decrypted = decriptaes(plain);
-  CryptoPP::StringSource ss2(aux_decrypted, true,
+  if(doaes){
+    string aux_decrypted = decriptaes(plain);
+    CryptoPP::StringSource ss2(aux_decrypted, true,
       new CryptoPP::HexDecoder(
           new CryptoPP::DefaultDecryptorWithMAC(
           (byte*)d_pass.data(), d_pass.size(),
               new CryptoPP::FileSink(aux,true)
           )
       )
-  );
+    );
+  }
+  else{
+    CryptoPP::StringSource ss2(plain, true,
+      new CryptoPP::HexDecoder(
+          new CryptoPP::DefaultDecryptorWithMAC(
+          (byte*)d_pass.data(), d_pass.size(),
+              new CryptoPP::FileSink(aux,true)
+          )
+      )
+    );
+  }
+  
 }
